@@ -1,9 +1,12 @@
 import { Header } from "@/components/HomePage/Header";
+import { Frame } from "@/components/Utils/Frame";
 
 export default function Page() {
   return (
     <div>
-      <Header />
+      <Frame>
+        <Header />
+      </Frame>
     </div>
   )
 }
