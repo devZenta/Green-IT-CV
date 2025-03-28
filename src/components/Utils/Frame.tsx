@@ -9,11 +9,11 @@ interface FrameProps {
 
 export function Frame({ children }: FrameProps) {
   return (
-    <div className="relative min-h-screen w-full py-4">
+    <div className="relative min-h-screen w-full flex flex-col py-4">
       {/* Main container with relative positioning */}
-      <div className="relative mx-auto w-[98%]">
-        {/* Frame border - using absolute positioning within the container */}
-        <div className="absolute inset-0 border border-red-500">
+      <div className="relative mx-auto w-[98%] h-full min-h-screen">
+        {/* Frame border with reduced bottom height */}
+        <div className="absolute w-full h-[calc(100vh-2rem)] border border-red-500">
           <DotPattern width={5} height={5} />
           
           {/* Corner squares */}
@@ -24,11 +24,10 @@ export function Frame({ children }: FrameProps) {
         </div>
         
         {/* Content container */}
-        <div className="relative z-10 py-4">
-          {children}
-          
-          {/* Additional space at the bottom to ensure the frame extends */}
-          <div className="h-16"></div>
+        <div className="relative z-10 flex flex-col flex-grow py-4">
+          <div className="flex-grow">
+            {children}
+          </div>
         </div>
       </div>
     </div>
