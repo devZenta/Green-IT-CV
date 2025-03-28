@@ -14,23 +14,34 @@ export function Education() {
   const educationItems: EducationItem[] = [
     {
       degree: "Master's Degree",
-      institution: "University Name",
-      period: "2020 - 2022",
-      description: "Computer Science with focus on sustainable development and green IT solutions."
+      institution: "ENIGMA-School",
+      period: "2027 - 2029",
+      description: "Master of Science in Computer Science with a focus on Network systems & Cloud or Backend development."
     },
     {
       degree: "Bachelor's Degree",
-      institution: "University Name",
-      period: "2017 - 2020",
-      description: "Information Technology with minor in Environmental Studies."
+      institution: "ENIGMA-School",
+      period: "2024 - 2027",
+      description: "Bachelor of Science in Computer Science with a focus on Software Engineering and Cybersecurity."
+    },
+    {
+      degree: "High School",
+      institution: "Saint Paul's School",
+      period: "2021 - 2024",
+      description: "High School Diploma with a focus on Science and Mathematics."
+    },
+    {
+      degree: "Secondary School",
+      institution: "Dominique Savio College",
+      period: "2017 - 2021",
+      description: "Secondary School Diploma."
     }
   ]
 
   return (
-    <section className="py-16" id="education">
+    <section className="py-8 -mt-12" id="education">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-primary">Education</h2>
-        <div className="space-y-8">
+        <div className="space-y-8 mt-48">
           {educationItems.map((item, index) => (
             <motion.div
               key={index}
