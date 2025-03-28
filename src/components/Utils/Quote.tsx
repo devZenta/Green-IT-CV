@@ -19,7 +19,7 @@ export function QuoteContent() {
           <p className="font-thin">projects are</p>
           <h1 className="font-semibold">showcased in</h1>
         </div>
-        <h1 className="font-semibold">detail...&quot;</h1>
+        <h1 className="font-thin">detail...&quot;</h1>
       </div>
     </div>
   );
