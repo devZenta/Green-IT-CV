@@ -1,13 +1,13 @@
+import { Contact } from "@/components/HomePage/Contact";
 import { Frame } from "@/components/Utils/Frame";
 import { Navbar } from "@/components/Utils/Navbar";
-import { QuoteContent } from "@/components/Utils/Quote";
 
-export default function Page() {
+export default function contact() {
   return (
     <div>
       <Frame>
         <Navbar />
-        <QuoteContent />
+        <Contact />
       </Frame>
     </div>
   )
