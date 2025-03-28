@@ -1,13 +1,13 @@
+import { Education } from "@/components/HomePage/Education";
 import { Frame } from "@/components/Utils/Frame";
 import { Navbar } from "@/components/Utils/Navbar";
-import { QuoteContent } from "@/components/Utils/Quote";
 
-export default function Page() {
+export default function education() {
   return (
     <div>
       <Frame>
         <Navbar />
-        <QuoteContent />
+        <Education />
       </Frame>
     </div>
   )

@@ -1,13 +1,13 @@
+import { Experience } from "@/components/HomePage/Experience";
 import { Frame } from "@/components/Utils/Frame";
 import { Navbar } from "@/components/Utils/Navbar";
-import { QuoteContent } from "@/components/Utils/Quote";
 
-export default function Page() {
+export default function experience() {
   return (
     <div>
       <Frame>
         <Navbar />
-        <QuoteContent />
+        <Experience />
       </Frame>
     </div>
   )
