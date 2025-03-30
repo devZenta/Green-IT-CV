@@ -1,13 +1,13 @@
 import { Frame } from "@/components/Utils/Frame";
 import { QuoteContent } from "@/components/HomePage/Quote";
-import { VerticalName } from "@/components/Utils/VerticalName";
+import { SocialButtons } from "@/components/HomePage/Socials";
 
 export default function Page() {
   return (
     <div>
       <Frame>
         <QuoteContent />
-        <VerticalName />
+        <SocialButtons />
       </Frame>
     </div>
   )
