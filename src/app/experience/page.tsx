@@ -1,12 +1,10 @@
-import { Experience } from "@/components/HomePage/Experience";
+import { Experience } from "@/components/ExperiencePage/Experience";
 import { Frame } from "@/components/Utils/Frame";
-import { Navbar } from "@/components/Utils/Navbar";
 
 export default function experience() {
   return (
     <div>
       <Frame>
-        <Navbar />
         <Experience />
       </Frame>
     </div>

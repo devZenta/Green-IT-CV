@@ -120,3 +120,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+.vertical-text-right {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
