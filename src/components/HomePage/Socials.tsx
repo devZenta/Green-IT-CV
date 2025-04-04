@@ -28,16 +28,16 @@ const socialLinks = [
 
 export function SocialButtons() {
   return (
-    <div className="flex items-center gap-4 mt-8">
+    <div className="flex items-center justify-center gap-8 -mt-20">
       {socialLinks.map((link) => (
         <motion.div
           key={link.name}
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 0.3,
-            delay: link.delay,
-            ease: "easeOut",
+            duration: 2.5,
+            delay: link.delay * 1.5,
+            ease: "easeInOut",
           }}
         >
           <Link
