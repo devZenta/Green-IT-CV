@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { VerticalName } from "@/components/Utils/VerticalName";
 import { VersionText } from "@/components/Utils/VersionText";
+import { PageNavigation } from "@/components/Utils/PageNavigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
         <VerticalName />
         <main className="h-full flex flex-col">
           {children}
+          <PageNavigation />
         </main>
         <VersionText />
       </body>
