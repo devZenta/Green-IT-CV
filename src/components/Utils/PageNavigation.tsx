@@ -40,8 +40,9 @@ export function PageNavigation() {
             >
               <ArrowLeft className="w-5 h-5 text-primary" />
             </motion.div>
-            <span className="text-sm font-medium text-foreground/70 group-hover:text-primary transition-colors">
+            <span className="text-sm font-medium text-foreground/70 group-hover:text-primary transition-colors relative">
               {prevPage.label}
+              <span className="absolute inset-x-0 bottom-0 h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
             </span>
           </Link>
         </motion.div>
@@ -57,8 +58,9 @@ export function PageNavigation() {
           transition={{ duration: 0.4, delay: 0.4 }}
         >
           <Link href={nextPage.path} className="flex items-center gap-2 group">
-            <span className="text-sm font-medium text-foreground/70 group-hover:text-primary transition-colors">
+            <span className="text-sm font-medium text-foreground/70 group-hover:text-primary transition-colors relative">
               {nextPage.label}
+              <span className="absolute inset-x-0 bottom-0 h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-300" />
             </span>
             <motion.div
               whileHover={{ scale: 1.1 }}
