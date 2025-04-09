@@ -14,7 +14,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/hugo-ghesquier/",
     icon: Linkedin,
     delay: 0.3,
   },
@@ -28,7 +28,7 @@ const socialLinks = [
 
 export function SocialButtons() {
   return (
-    <div className="flex items-center justify-center gap-8 -mt-20">
+    <div className="flex items-center justify-center gap-10 -mt-20">
       {socialLinks.map((link) => (
         <motion.div
           key={link.name}
@@ -44,10 +44,10 @@ export function SocialButtons() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
             aria-label={link.name}
           >
-            <link.icon className="w-5 h-5 text-primary" />
+            <link.icon className="w-7 h-7 text-primary" />
           </Link>
         </motion.div>
       ))}

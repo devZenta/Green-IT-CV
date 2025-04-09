@@ -40,50 +40,78 @@ export function NavBar({ items, className }: NavBarProps) {
   }, [])
 
   return (
-    <div
+    <motion.div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-16",
+        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-24",
         className,
       )}
+      initial={{ opacity: 0, y: isMobile ? 50 : -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20
+      }}
     >
-      <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
-        {items.map((item) => {
+      <motion.div 
+        className="flex items-center gap-4 bg-background/5 border border-border backdrop-blur-lg py-3 px-4 rounded-full shadow-lg"
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ 
+          duration: 0.4, 
+          delay: 0.8,
+          type: "spring",
+          stiffness: 300
+        }}
+      >
+        {items.map((item, index) => {
           const isActive = activeTab === item.name
 
           return (
-            <Link
+            <motion.div
               key={item.name}
-              href={item.url}
-              onClick={() => setActiveTab(item.name)}
-              className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                "text-foreground/80 hover:text-primary",
-                isActive && "bg-muted text-primary",
-              )}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: 0.9 + (index * 0.1)
+              }}
             >
-              <span className="hidden md:inline">{item.name}</span>
-              {isActive && (
-                <motion.div
-                  layoutId="lamp"
-                  className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
-                  initial={false}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                  }}
-                >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full">
-                    <div className="absolute w-12 h-6 bg-primary/20 rounded-full blur-md -top-2 -left-2" />
-                    <div className="absolute w-8 h-6 bg-primary/20 rounded-full blur-md -top-1" />
-                    <div className="absolute w-4 h-4 bg-primary/20 rounded-full blur-sm top-0 left-2" />
-                  </div>
-                </motion.div>
-              )}
-            </Link>
+              <Link
+                href={item.url}
+                onClick={() => setActiveTab(item.name)}
+                className={cn(
+                  "relative cursor-pointer text-base font-semibold px-8 py-3 rounded-full transition-colors",
+                  "text-foreground/80 hover:text-primary",
+                  isActive && "bg-muted text-primary",
+                )}
+              >
+                <span className="hidden md:inline">{item.name}</span>
+                {isActive && (
+                  <motion.div
+                    layoutId="lamp"
+                    className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
+                    initial={false}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                    }}
+                  >
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 h-1.5 bg-primary rounded-t-full">
+                      <div className="absolute w-14 h-7 bg-primary/20 rounded-full blur-md -top-2 -left-2" />
+                      <div className="absolute w-10 h-7 bg-primary/20 rounded-full blur-md -top-1" />
+                      <div className="absolute w-5 h-5 bg-primary/20 rounded-full blur-sm top-0 left-2" />
+                    </div>
+                  </motion.div>
+                )}
+              </Link>
+            </motion.div>
           )
         })}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
