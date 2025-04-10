@@ -1,10 +1,11 @@
+import { Skills } from "@/components/SkillsPage/Skills";
 import { Frame } from "@/components/Utils/Frame";
 
 export default function skills() {
   return (
     <div>
       <Frame>
-        <h1 className="text-4xl font-bold text-center">Skills</h1>
+        <Skills />
       </Frame>
     </div>
   )
