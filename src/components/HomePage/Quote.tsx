@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
-import Link from "next/link"
 
 const socialLinks = [
   {
@@ -19,7 +18,7 @@ const socialLinks = [
   },
   {
     name: "Email",
-    url: "mailto:your.email@example.com",
+    url: "mailto:hugo.ghesquier@gmail.com",
     icon: Mail,
     delay: 0.4,
   },
@@ -84,11 +83,15 @@ export function QuoteContent() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.2, ease: "easeInOut" }}
-        className="flex items-center justify-center gap-6 mt-14 md:mt-20"
+        className="flex items-center justify-center gap-6 mt-14 md:mt-20 relative z-40"
       >
         {socialLinks.map((link) => (
-          <motion.div
+          <motion.a
             key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.name}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -96,17 +99,11 @@ export function QuoteContent() {
               delay: 1.2 + link.delay,
               ease: "easeOut",
             }}
+            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors cursor-pointer"
+            style={{ position: 'relative', zIndex: 50 }}
           >
-            <Link
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
-              aria-label={link.name}
-            >
-              <link.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-            </Link>
-          </motion.div>
+            <link.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+          </motion.a>
         ))}
       </motion.div>
     </div>
