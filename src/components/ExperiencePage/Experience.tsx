@@ -45,32 +45,50 @@ Field observed ➡️ After-sales service, computer maintenance and repair
     }
   ]
 
+  // Split the experience items into groups of 2
+  const experienceGroups = [];
+  for (let i = 0; i < experienceItems.length; i += 2) {
+    experienceGroups.push(experienceItems.slice(i, i + 2));
+  }
+
   return (
     <section className="py-24 mt-16 bg-muted/30" id="experience">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="space-y-8">
-          {experienceItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-r from-[#C7CEE8]/20 to-[#C7CEE8]/10 border border-border p-6 rounded-lg"
-            >
-              <h3 className="text-xl font-semibold text-foreground">{item.position}</h3>
-              <div className="flex justify-between items-center mt-2">
-                <p className="text-primary font-medium">{item.company}</p>
-                <p className="text-sm text-foreground/70">{item.period}</p>
-              </div>
-              <p className="mt-3 text-foreground/80 whitespace-pre-line">{item.description}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {item.technologies.map((tech, i) => (
-                  <span key={i} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="space-y-16">
+          {experienceGroups.map((group, groupIndex) => (
+            <div key={groupIndex} className="flex flex-col md:flex-row gap-6 md:gap-10">
+              {group.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="bg-gradient-to-r from-[#C7CEE8]/20 to-[#C7CEE8]/10 border border-border p-6 rounded-lg flex-1"
+                >
+                  {/* Date for all screens */}
+                  <div className="mb-4">
+                    <span className="inline-block bg-primary/10 text-primary font-medium px-3 py-1 rounded-full text-sm">
+                      {item.period}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-foreground">{item.position}</h3>
+                  <p className="text-primary font-medium mt-2">{item.company}</p>
+                  <p className="mt-3 text-foreground/80 whitespace-pre-line">{item.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {item.technologies.map((tech, i) => (
+                      <span key={i} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+              
+              {/* If there's only one item in a group, add an empty div for balance */}
+              {group.length === 1 && <div className="flex-1 hidden md:block" />}
+            </div>
           ))}
         </div>
       </div>

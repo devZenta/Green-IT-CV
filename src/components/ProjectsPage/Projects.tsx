@@ -80,23 +80,35 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <motion.a 
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer" 
-                className="mt-3 inline-flex items-center text-primary hover:underline"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => window.open(item.link, '_blank')}
+                className="mt-4 inline-flex items-center justify-center px-4 py-2 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 w-full group"
               >
-                View Project
-                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </motion.a>
+                <span>View Project</span>
+                <motion.svg 
+                  className="ml-2 w-4 h-4"
+                  initial={{ x: 0 }}
+                  animate={{ x: 0 }}
+                  whileHover={{ x: 4 }}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                  />
+                </motion.svg>
+              </motion.button>
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
