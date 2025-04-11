@@ -20,7 +20,6 @@ export function NavBar({ items, className }: NavBarProps) {
   const pathname = usePathname()
   const [activeTab, setActiveTab] = useState("")
   const [isMobile, setIsMobile] = useState(false)
-  console.log("isMobile", isMobile)
 
   useEffect(() => {
     const currentItem = items.find(item => item.url === pathname)
@@ -42,7 +41,7 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <motion.div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-24",
+        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-24 pointer-events-none",
         className,
       )}
       initial={{ opacity: 0, y: isMobile ? 50 : -50 }}
@@ -56,7 +55,7 @@ export function NavBar({ items, className }: NavBarProps) {
       }}
     >
       <motion.div 
-        className="flex items-center gap-4 bg-background/5 border border-border backdrop-blur-lg py-3 px-4 rounded-full shadow-lg"
+        className="flex items-center gap-4 bg-background/5 border border-border backdrop-blur-lg py-3 px-4 rounded-full shadow-lg pointer-events-auto w-fit mx-auto"
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         transition={{ 
