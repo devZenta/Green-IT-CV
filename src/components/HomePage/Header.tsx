@@ -2,26 +2,30 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
+import Link from "next/link"
 
 const socialLinks = [
   {
     name: "GitHub",
     url: "https://github.com/devZenta",
     icon: Github,
+    delay: 0.2,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/hugo-ghesquier/",
     icon: Linkedin,
+    delay: 0.3,
   },
   {
     name: "Email",
-    url: "mailto:hugo.ghesquier@gmail.com",
+    url: "mailto:hugo.ghesquier.pro@gmail.com",
     icon: Mail,
+    delay: 0.4,
   },
 ]
 
-export function QuoteContent() {
+export function Header() {
   return (
     <div className="relative z-20 w-full px-4 max-w-7xl mx-auto mt-20 md:mt-32 lg:mt-40 mb-10 md:mb-16 rounded-[40px] py-12 md:py-16 xl:py-28 flex flex-col items-center">
       <motion.div 
@@ -39,7 +43,7 @@ export function QuoteContent() {
           className="flex gap-1 md:gap-2 lg:gap-3 xl:gap-4 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          transition={{ duration: 1.2, delay: 0.2, ease: "easeInOut" }}
         >
           <h1 className="font-semibold">&quot;Welcome</h1>
           <p className="font-thin">to my interactive</p>
@@ -48,7 +52,7 @@ export function QuoteContent() {
           className="flex gap-1 md:gap-2 lg:gap-3 xl:gap-4 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
         >
           <h1 className="font-semibold">CV</h1>
           <p className="font-thin">where my</p>
@@ -58,7 +62,7 @@ export function QuoteContent() {
           className="flex gap-1 md:gap-2 lg:gap-3 xl:gap-4 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          transition={{ duration: 1.2, delay: 0.6, ease: "easeInOut" }}
         >
           <h1 className="font-semibold">projects</h1>
           <p className="font-thin">are</p>
@@ -69,63 +73,37 @@ export function QuoteContent() {
           className="font-thin"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
         >
           detail...&quot;
         </motion.h1>
       </div>
       
-      {/* Boutons sociaux */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="flex items-center justify-center gap-6 mt-14 md:mt-20 relative z-40"
-      >
+      {/* Social Buttons */}
+      <div className="flex items-center justify-center gap-8 mt-16 md:mt-20">
         {socialLinks.map((link) => (
-          <motion.a
+          <motion.div
             key={link.name}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={link.name}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ 
-              scale: 1.15,
-              boxShadow: "0 0 15px rgba(161, 161, 252, 0.5)",
-              backgroundColor: "rgba(161, 161, 252, 0.15)",
-              transition: { 
-                duration: 0.4,
-                type: "spring",
-                stiffness: 300
-              }
-            }}
-            whileTap={{ 
-              scale: 0.9,
-              boxShadow: "0 0 0px rgba(161, 161, 252, 0)",
-            }}
             transition={{
-              duration: 0.6,
-              ease: "easeOut",
+              duration: 2.5,
+              delay: link.delay + 0.8,
+              ease: "easeInOut",
             }}
-            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/5 transition-all duration-300 cursor-pointer relative overflow-hidden"
-            style={{ position: 'relative', zIndex: 50 }}
           >
-            <motion.div 
-              className="absolute inset-0 bg-primary/5"
-              whileHover={{
-                scale: 1.5,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.5,
-              }}
-            />
-            <link.icon className="w-5 h-5 md:w-6 md:h-6 text-primary relative z-10" />
-          </motion.a>
+            <Link
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 hover:bg-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
+              aria-label={link.name}
+            >
+              <link.icon className="w-5 h-5 md:w-6 md:h-6 text-primary transition-all duration-300 group-hover:text-primary/90" />
+            </Link>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import { Frame } from "@/components/Utils/Frame";
-import { QuoteContent } from "@/components/HomePage/Quote";
+import { Header } from "@/components/HomePage/Header";
 
 export default function Page() {
   return (
     <div>
       <Frame>
-        <QuoteContent />
+        <Header />
       </Frame>
     </div>
   )

@@ -9,38 +9,43 @@ interface EducationItem {
   institution: string
   period: string
   description: string
-  logo?: string 
+  logo?: string
+  link?: string 
 }
 
 export function Education() {
   const educationItems: EducationItem[] = [
-    {
+    /*{
       degree: "Master's Degree",
       institution: "ENIGMA-School",
       period: "2027 - 2029",
       description: "Master of Science in Computer Science with a focus on Network systems & Cloud or Backend development.",
-      logo: "/logo/enigma_school_logo.png" 
-    },
+      logo: "/logo/enigma_school_logo.png",
+      link: "https://www.enigma-school.com/"
+    },*/
     {
       degree: "Bachelor's Degree",
       institution: "ENIGMA-School",
       period: "2024 - 2027",
       description: "Bachelor of Science in Computer Science with a focus on Software Engineering and Cybersecurity.",
-      logo: "/logo/enigma_school_logo.png" 
+      logo: "/logo/enigma_school_logo.png" ,
+      link: "https://www.enigma-school.com/"
     },
     {
       degree: "High School",
       institution: "Saint Paul's School",
       period: "2021 - 2024",
       description: "High School Diploma with a focus on Science and Mathematics.",
-      logo: "/logo/saint_paul_logo.png" 
+      logo: "/logo/saint_paul_logo.png",
+      link: "https://saintpaul-lille.fr/"
     },
     {
       degree: "Secondary School",
       institution: "Dominique Savio College",
       period: "2017 - 2021",
       description: "Secondary School Diploma.",
-      logo: "/logo/dominique_savio_logo.png" 
+      logo: "/logo/dominique_savio_logo.png",
+      link: "https://www.savio-lambersart.fr/"
     }
   ]
 
@@ -71,7 +76,33 @@ export function Education() {
                 <div className="flex-grow">
                   <h3 className="text-xl font-semibold text-foreground">{item.degree}</h3>
                   <div className="flex justify-between items-center mt-2">
-                    <p className="text-primary font-medium">{item.institution}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-primary font-medium">{item.institution}</p>
+                      {item.link && (
+                        <a 
+                          href={item.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary/70 hover:text-primary transition-colors"
+                          title="Visiter le site web"
+                        >
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className="h-4 w-4" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                          >
+                            <path 
+                              strokeLinecap="round" 
+                              strokeLinejoin="round" 
+                              strokeWidth={2} 
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                            />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
                     <p className="text-sm text-foreground/70">{item.period}</p>
                   </div>
                   <p className="mt-3 text-foreground/80">{item.description}</p>
