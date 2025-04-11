@@ -2,6 +2,7 @@
 
 import React from "react"
 import { motion } from "framer-motion"
+import { Github } from "lucide-react"
 
 interface ProjectItem {
   title: string
@@ -69,9 +70,49 @@ export function Projects() {
                 delay: index * 0.15,
                 ease: [0.22, 1, 0.36, 1]
               }}
-              className="bg-gradient-to-r from-[#C7CEE8]/20 to-[#C7CEE8]/10 border border-border p-5 rounded-lg h-full flex flex-col"
+              className="bg-gradient-to-r from-[#C7CEE8]/20 to-[#C7CEE8]/10 border border-border p-5 rounded-lg h-full flex flex-col mt-4"
             >
-              <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
+              <div className="flex justify-between items-start">
+                <motion.a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl font-semibold text-foreground hover:text-primary transition-colors duration-200 flex items-center gap-1 group"
+                  whileHover={{ x: 3 }}
+                >
+                  {item.title}
+                  <motion.svg 
+                    className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                    />
+                  </motion.svg>
+                </motion.a>
+                
+                <motion.a 
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors duration-300"
+                  whileHover={{ 
+                    scale: 1.1,
+                    backgroundColor: "rgba(161, 161, 252, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={`View ${item.title} on GitHub`}
+                >
+                  <Github className="w-5 h-5 text-primary" />
+                </motion.a>
+              </div>
+              
               <p className="mt-1.5 text-foreground/80 flex-grow">{item.description}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {item.technologies.map((tech, i) => (
@@ -80,31 +121,6 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => window.open(item.link, '_blank')}
-                className="mt-4 inline-flex items-center justify-center px-4 py-2 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 w-full group"
-              >
-                <span>View Project</span>
-                <motion.svg 
-                  className="ml-2 w-4 h-4"
-                  initial={{ x: 0 }}
-                  animate={{ x: 0 }}
-                  whileHover={{ x: 4 }}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
-                  />
-                </motion.svg>
-              </motion.button>
             </motion.div>
           ))}
         </motion.div>

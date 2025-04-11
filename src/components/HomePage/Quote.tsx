@@ -8,19 +8,16 @@ const socialLinks = [
     name: "GitHub",
     url: "https://github.com/devZenta",
     icon: Github,
-    delay: 0.2,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/hugo-ghesquier/",
     icon: Linkedin,
-    delay: 0.3,
   },
   {
     name: "Email",
     url: "mailto:hugo.ghesquier@gmail.com",
     icon: Mail,
-    delay: 0.4,
   },
 ]
 
@@ -42,7 +39,7 @@ export function QuoteContent() {
           className="flex gap-1 md:gap-2 lg:gap-3 xl:gap-4 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: "easeInOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         >
           <h1 className="font-semibold">&quot;Welcome</h1>
           <p className="font-thin">to my interactive</p>
@@ -51,7 +48,7 @@ export function QuoteContent() {
           className="flex gap-1 md:gap-2 lg:gap-3 xl:gap-4 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         >
           <h1 className="font-semibold">CV</h1>
           <p className="font-thin">where my</p>
@@ -61,7 +58,7 @@ export function QuoteContent() {
           className="flex gap-1 md:gap-2 lg:gap-3 xl:gap-4 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.6, ease: "easeInOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         >
           <h1 className="font-semibold">projects</h1>
           <p className="font-thin">are</p>
@@ -72,7 +69,7 @@ export function QuoteContent() {
           className="font-thin"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         >
           detail...&quot;
         </motion.h1>
@@ -82,7 +79,7 @@ export function QuoteContent() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.2, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
         className="flex items-center justify-center gap-6 mt-14 md:mt-20 relative z-40"
       >
         {socialLinks.map((link) => (
@@ -94,15 +91,38 @@ export function QuoteContent() {
             aria-label={link.name}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ 
+              scale: 1.15,
+              boxShadow: "0 0 15px rgba(161, 161, 252, 0.5)",
+              backgroundColor: "rgba(161, 161, 252, 0.15)",
+              transition: { 
+                duration: 0.4,
+                type: "spring",
+                stiffness: 300
+              }
+            }}
+            whileTap={{ 
+              scale: 0.9,
+              boxShadow: "0 0 0px rgba(161, 161, 252, 0)",
+            }}
             transition={{
-              duration: 0.8,
-              delay: 1.2 + link.delay,
+              duration: 0.6,
               ease: "easeOut",
             }}
-            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors cursor-pointer"
+            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/5 transition-all duration-300 cursor-pointer relative overflow-hidden"
             style={{ position: 'relative', zIndex: 50 }}
           >
-            <link.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            <motion.div 
+              className="absolute inset-0 bg-primary/5"
+              whileHover={{
+                scale: 1.5,
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.5,
+              }}
+            />
+            <link.icon className="w-5 h-5 md:w-6 md:h-6 text-primary relative z-10" />
           </motion.a>
         ))}
       </motion.div>
