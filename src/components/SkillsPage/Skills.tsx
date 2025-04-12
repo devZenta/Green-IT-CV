@@ -26,8 +26,6 @@ const skills: Skill[] = [
   { name: "Next JS", icon: "/skills/frontend/nextjs_logo.svg", category: "frontend" },
   { name: "Tailwind CSS", icon: "/skills/frontend/tailwind_css_logo.svg", category: "frontend" },
   { name: "Tailwind UI", icon: "/skills/frontend/tailwind_ui_logo.jpeg", category: "frontend" },
-  { name: "HTML5", icon: "/skills/frontend/html5_logo.svg", category: "frontend" },
-  { name: "CSS3", icon: "/skills/frontend/css3_logo.svg", category: "frontend" },
   { name: "Material UI", icon: "/skills/frontend/material_ui_logo.svg", category: "frontend" },
   { name: "Framer Motion", icon: "/skills/frontend/framer_motion_logo.svg", category: "frontend" },
   { name: "Shadcn UI", icon: "/skills/frontend/shadcn_ui_logo.jpg", category: "frontend" },
@@ -83,24 +81,25 @@ function SkillItem({ skill, index }: { skill: Skill; index: number }) {
         delay: index * 0.05,
         ease: "easeOut"
       }}
-      className="group flex items-center bg-background/50 border border-border/40 hover:border-primary/30 rounded-lg p-3 transition-colors duration-200"
+      className="group flex items-center justify-between bg-transparent border-2 border-border/60 hover:border-primary/70 rounded-lg p-7 transition-all duration-200 h-24"
     >
-      <div className="w-7 h-7 mr-4 relative flex-shrink-0">
-        <Image
-          src={skill.icon}
-          alt={skill.name}
-          width={28}
-          height={28}
-          className="object-contain group-hover:scale-110 transition-transform duration-200"
-        />
+      <div className="flex items-center">
+        <div className="w-14 h-14 mr-6 relative flex-shrink-0">
+          <Image
+            src={skill.icon}
+            alt={skill.name}
+            width={56}
+            height={56}
+            className="object-contain group-hover:scale-110 transition-transform duration-200"
+          />
+        </div>
+        <span className="text-lg font-medium text-foreground/90 group-hover:text-primary transition-colors duration-200">
+          {skill.name}
+        </span>
       </div>
-      <span className="text-sm text-foreground/80 group-hover:text-primary transition-colors duration-200">
-        {skill.name}
-      </span>
     </motion.div>
   )
 }
-
 export function Skills() {
   const [activeCategory, setActiveCategory] = useState("frontend");
 
@@ -136,7 +135,7 @@ export function Skills() {
         initial="hidden"
         animate="visible"
       >
-        {categories.map((category, index) => (
+        {categories.map((category) => (
           <motion.button
             key={category.id}
             variants={buttonVariants}
@@ -159,15 +158,15 @@ export function Skills() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.3 }}
-        className="max-w-4xl mx-auto"
+        className="max-w-5xl mx-auto"
       >
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
-          {skills
-            .filter(skill => skill.category === activeCategory)
-            .map((skill, index) => (
-              <SkillItem key={skill.name} skill={skill} index={index} />
-            ))}
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+  {skills
+    .filter(skill => skill.category === activeCategory)
+    .map((skill, index) => (
+      <SkillItem key={skill.name} skill={skill} index={index} />
+    ))}
+</div>
       </motion.div>
     </div>
   )
