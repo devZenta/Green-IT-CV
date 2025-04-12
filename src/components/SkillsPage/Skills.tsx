@@ -22,55 +22,55 @@ const categories = [
 
 const skills: Skill[] = [
   
-  { name: "React", icon: "/images/skills/react.svg", category: "frontend" },
-  { name: "Next.js", icon: "/images/skills/nextjs.svg", category: "frontend" },
-  { name: "Tailwind CSS", icon: "/images/skills/tailwind.svg", category: "frontend" },
-  { name: "Tailwind UI", icon: "/images/skills/tailwind-ui.svg", category: "frontend" },
-  { name: "HTML5", icon: "/images/skills/html5.svg", category: "frontend" },
-  { name: "CSS3", icon: "/images/skills/css3.svg", category: "frontend" },
-  { name: "Material UI", icon: "/images/skills/material-ui.svg", category: "frontend" },
-  { name: "Framer Motion", icon: "/images/skills/framer-motion.svg", category: "frontend" },
-  { name: "Shadcn UI", icon: "/images/skills/shadcn-ui.svg", category: "frontend" },
-  { name: "Radix UI", icon: "/images/skills/radix-ui.svg", category: "frontend" },
+  { name: "React", icon: "/skills/frontend/react_logo.svg", category: "frontend" },
+  { name: "Next JS", icon: "/skills/frontend/nextjs_logo.svg", category: "frontend" },
+  { name: "Tailwind CSS", icon: "/skills/frontend/tailwind_css_logo.svg", category: "frontend" },
+  { name: "Tailwind UI", icon: "/skills/frontend/tailwind_ui_logo.jpeg", category: "frontend" },
+  { name: "HTML5", icon: "/skills/frontend/html5_logo.svg", category: "frontend" },
+  { name: "CSS3", icon: "/skills/frontend/css3_logo.svg", category: "frontend" },
+  { name: "Material UI", icon: "/skills/frontend/material_ui_logo.svg", category: "frontend" },
+  { name: "Framer Motion", icon: "/skills/frontend/framer_motion_logo.svg", category: "frontend" },
+  { name: "Shadcn UI", icon: "/skills/frontend/shadcn_ui_logo.jpg", category: "frontend" },
+  { name: "Radix UI", icon: "/skills/frontend/radix_ui_logo.svg", category: "frontend" },
 
 
-  { name: "JavaScript", icon: "/images/skills/javascript.svg", category: "backend" },
-  { name: "TypeScript", icon: "/images/skills/typescript.svg", category: "backend" },
-  { name: "Python", icon: "/images/skills/python.svg", category: "backend" },
-  { name: "C", icon: "/images/skills/c.svg", category: "backend" },
-  { name:  "Java", icon: "/images/skills/java.svg", category: "backend" },
-  { name: "Blueprint", icon: "/images/skills/blueprint.svg", category: "backend" },
-  { name: "Node.js", icon: "/images/skills/nodejs.svg", category: "backend" },
-  { name: "Express", icon: "/images/skills/express.svg", category: "backend" },
-
-  
-  { name: "MongoDB", icon: "/images/skills/mongodb.svg", category: "database" },
-  { name: "SQL", icon: "/images/skills/postgresql.svg", category: "database" },
-  { name: "SQLite", icon: "/images/skills/sqlite.svg", category: "database" },
-  { name: "Prisma", icon: "/images/skills/prisma.svg", category: "database" },
-  { name: "Mongoose", icon: "/images/skills/mongoose.svg", category: "database" },
-  { name: "Sequelize", icon: "/images/skills/sequelize.svg", category: "database" },
+  { name: "JavaScript", icon: "/skills/backend/javascript_logo.svg", category: "backend" },
+  { name: "TypeScript", icon: "/skills/backend/typescript_logo.svg", category: "backend" },
+  { name: "Python", icon: "/skills/backend/python_logo.svg", category: "backend" },
+  { name: "C", icon: "/skills/backend/c_logo.svg", category: "backend" },
+  { name:  "Java", icon: "/skills/backend/java_logo.svg", category: "backend" },
+  { name: "Blueprint", icon: "/skills/tools/unreal_engine_logo.svg", category: "backend" },
+  { name: "Node JS", icon: "/skills/backend/node_js_logo.svg", category: "backend" },
+  { name: "Express", icon: "/skills/backend/express_js_logo.svg", category: "backend" },
 
   
-  { name: "Docker", icon: "/images/skills/docker.svg", category: "devops" },
-  { name: "GitHub Actions", icon: "/images/skills/github-actions.svg", category: "devops" },
-  { name: "Firebase", icon: "/images/skills/firebase.svg", category: "devops" },
-  { name: "GitHub Pages", icon: "/images/skills/github-pages.svg", category: "devops" },
-  { name: "Vercel", icon: "/images/skills/vercel.svg", category: "devops" },
-  { name: "Railway", icon: "/images/skills/railway.svg", category: "devops" },
-
-
-  { name: "CCNA 1", icon: "/images/skills/ccna.svg", category: "network" },
-  { name: "CCNA 2", icon: "/images/skills/ccna.svg", category: "network" },
-  { name: "CSNA", icon: "/images/skills/csna.svg", category: "network" },
-  { name: "Cisco Packet Tracer", icon: "/images/skills/cisco-packet-tracer.svg", category: "network" },
+  { name: "MongoDB", icon: "/skills/database/mongodb_logo.svg", category: "database" },
+  { name: "SQL", icon: "/skills/database/sql_logo.svg", category: "database" },
+  { name: "SQLite", icon: "/skills/database/sqlite_logo.svg", category: "database" },
+  { name: "Prisma", icon: "/skills/database/prisma_logo.svg", category: "database" },
+  { name: "Sequelize", icon: "/skills/database/sequelize_logo.svg", category: "database" },
 
   
-  { name: "Git", icon: "/images/skills/git.svg", category: "tools" },
-  { name: "Figma", icon: "/images/skills/figma.svg", category: "tools" },
-  { name: "VS Code", icon: "/images/skills/vscode.svg", category: "tools" },
-  { name: "Postman", icon: "/images/skills/postman.svg", category: "tools" },
-  { name: "Unreal Engine", icon: "/images/skills/unreal-engine.svg", category: "tools" },
+  { name: "Docker", icon: "/skills/devops/docker_logo.svg", category: "devops" },
+  { name: "GitHub Actions", icon: "/skills/devops/github_actions_logo.svg", category: "devops" },
+  { name: "Firebase", icon: "/skills/devops/firebase_logo.svg", category: "devops" },
+  { name: "GitHub Pages", icon: "/skills/tools/github_logo.svg", category: "devops" },
+  { name: "Vercel", icon: "/skills/devops/vercel_logo.svg", category: "devops" },
+  { name: "Railway", icon: "/skills/devops/railway_logo.svg", category: "devops" },
+
+
+  { name: "CCNA 1", icon: "/skills/network/ccna1_logo.png", category: "network" },
+  { name: "CCNA 2", icon: "/skills/network/ccna2_logo.png", category: "network" },
+  { name: "IOT", icon: "/skills/network/iot_logo.png", category: "network" },
+  { name: "Cisco Packet Tracer", icon: "/skills/network/cisco_packet_tracer_logo.svg", category: "network" },
+
+  
+  { name: "Git", icon: "/skills/tools/git_logo.svg", category: "tools" },
+  { name: "GitHub", icon: "/skills/tools/github_logo.svg", category: "tools" },
+  { name: "Figma", icon: "/skills/tools/figma_logo.svg", category: "tools" },
+  { name: "VS Code", icon: "/skills/tools/vs_code_logo.svg", category: "tools" },
+  { name: "Postman", icon: "/skills/tools/postman_logo.svg", category: "tools" },
+  { name: "Unreal Engine", icon: "/skills/tools/unreal_engine_logo.svg", category: "tools" },
 ]
 
 function SkillItem({ skill, index }: { skill: Skill; index: number }) {
