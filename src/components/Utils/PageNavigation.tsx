@@ -48,7 +48,6 @@ export function PageNavigation() {
         </motion.div>
       )}
 
-      {/* Bouton suivant */}
       {nextPage && (
         <motion.div
           className="fixed right-10 sm:right-16 bottom-24 z-40 group"

@@ -79,7 +79,6 @@ export function Header() {
         </motion.h1>
       </div>
       
-      {/* Social Buttons */}
       <div className="flex items-center justify-center gap-8 mt-16 md:mt-20">
         {socialLinks.map((link) => (
           <motion.div
