@@ -1,145 +1,174 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { cn } from "@/lib/utils"
 
-// Définition de l'interface pour les compétences
 interface Skill {
   name: string
   icon: string
-  category: "frontend" | "backend" | "database" | "devops" | "tools" | "other"
+  category: "frontend" | "backend" | "database" | "devops" | "tools" | "network"
 }
 
-// Définition des catégories
 const categories = [
   { id: "frontend", title: "Frontend" },
   { id: "backend", title: "Backend" },
-  { id: "database", title: "Bases de données" },
+  { id: "database", title: "Database" },
   { id: "devops", title: "DevOps" },
-  { id: "tools", title: "Outils" },
-  { id: "other", title: "Autres" }
+  { id: "network", title: "Network" },
+  { id: "tools", title: "Tools" },
 ]
 
-// Les compétences
 const skills: Skill[] = [
-  // Frontend
+  
   { name: "React", icon: "/images/skills/react.svg", category: "frontend" },
   { name: "Next.js", icon: "/images/skills/nextjs.svg", category: "frontend" },
-  { name: "TypeScript", icon: "/images/skills/typescript.svg", category: "frontend" },
   { name: "Tailwind CSS", icon: "/images/skills/tailwind.svg", category: "frontend" },
+  { name: "Tailwind UI", icon: "/images/skills/tailwind-ui.svg", category: "frontend" },
   { name: "HTML5", icon: "/images/skills/html5.svg", category: "frontend" },
   { name: "CSS3", icon: "/images/skills/css3.svg", category: "frontend" },
-  { name: "JavaScript", icon: "/images/skills/javascript.svg", category: "frontend" },
+  { name: "Material UI", icon: "/images/skills/material-ui.svg", category: "frontend" },
+  { name: "Framer Motion", icon: "/images/skills/framer-motion.svg", category: "frontend" },
+  { name: "Shadcn UI", icon: "/images/skills/shadcn-ui.svg", category: "frontend" },
+  { name: "Radix UI", icon: "/images/skills/radix-ui.svg", category: "frontend" },
 
-  // Backend
+
+  { name: "JavaScript", icon: "/images/skills/javascript.svg", category: "backend" },
+  { name: "TypeScript", icon: "/images/skills/typescript.svg", category: "backend" },
+  { name: "Python", icon: "/images/skills/python.svg", category: "backend" },
+  { name: "C", icon: "/images/skills/c.svg", category: "backend" },
+  { name:  "Java", icon: "/images/skills/java.svg", category: "backend" },
+  { name: "Blueprint", icon: "/images/skills/blueprint.svg", category: "backend" },
   { name: "Node.js", icon: "/images/skills/nodejs.svg", category: "backend" },
   { name: "Express", icon: "/images/skills/express.svg", category: "backend" },
-  { name: "PHP", icon: "/images/skills/php.svg", category: "backend" },
 
-  // Databases
+  
   { name: "MongoDB", icon: "/images/skills/mongodb.svg", category: "database" },
-  { name: "PostgreSQL", icon: "/images/skills/postgresql.svg", category: "database" },
-  { name: "MySQL", icon: "/images/skills/mysql.svg", category: "database" },
+  { name: "SQL", icon: "/images/skills/postgresql.svg", category: "database" },
+  { name: "SQLite", icon: "/images/skills/sqlite.svg", category: "database" },
+  { name: "Prisma", icon: "/images/skills/prisma.svg", category: "database" },
+  { name: "Mongoose", icon: "/images/skills/mongoose.svg", category: "database" },
+  { name: "Sequelize", icon: "/images/skills/sequelize.svg", category: "database" },
 
-  // DevOps
+  
   { name: "Docker", icon: "/images/skills/docker.svg", category: "devops" },
   { name: "GitHub Actions", icon: "/images/skills/github-actions.svg", category: "devops" },
+  { name: "Firebase", icon: "/images/skills/firebase.svg", category: "devops" },
+  { name: "GitHub Pages", icon: "/images/skills/github-pages.svg", category: "devops" },
   { name: "Vercel", icon: "/images/skills/vercel.svg", category: "devops" },
+  { name: "Railway", icon: "/images/skills/railway.svg", category: "devops" },
 
-  // Tools
+
+  { name: "CCNA 1", icon: "/images/skills/ccna.svg", category: "network" },
+  { name: "CCNA 2", icon: "/images/skills/ccna.svg", category: "network" },
+  { name: "CSNA", icon: "/images/skills/csna.svg", category: "network" },
+  { name: "Cisco Packet Tracer", icon: "/images/skills/cisco-packet-tracer.svg", category: "network" },
+
+  
   { name: "Git", icon: "/images/skills/git.svg", category: "tools" },
   { name: "Figma", icon: "/images/skills/figma.svg", category: "tools" },
   { name: "VS Code", icon: "/images/skills/vscode.svg", category: "tools" },
-  { name: "Jest", icon: "/images/skills/jest.svg", category: "tools" }
+  { name: "Postman", icon: "/images/skills/postman.svg", category: "tools" },
+  { name: "Unreal Engine", icon: "/images/skills/unreal-engine.svg", category: "tools" },
 ]
 
-// Composant pour afficher une compétence individuelle
 function SkillItem({ skill, index }: { skill: Skill; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="flex flex-col items-center"
+      transition={{ 
+        duration: 0.4, 
+        delay: index * 0.05,
+        ease: "easeOut"
+      }}
+      className="group flex items-center bg-background/50 border border-border/40 hover:border-primary/30 rounded-lg p-3 transition-colors duration-200"
     >
-      <div className="relative w-16 h-16 md:w-20 md:h-20 mb-3 bg-white/80 dark:bg-gray-800/80 rounded-full p-3 flex items-center justify-center shadow-sm">
+      <div className="w-7 h-7 mr-4 relative flex-shrink-0">
         <Image
           src={skill.icon}
           alt={skill.name}
-          width={48}
-          height={48}
-          className="object-contain"
+          width={28}
+          height={28}
+          className="object-contain group-hover:scale-110 transition-transform duration-200"
         />
       </div>
-      <p className="text-sm md:text-base text-center font-medium text-gray-800 dark:text-gray-200">
+      <span className="text-sm text-foreground/80 group-hover:text-primary transition-colors duration-200">
         {skill.name}
-      </p>
+      </span>
     </motion.div>
   )
 }
 
-// Composant pour une catégorie de compétences
-function SkillCategory({ category, categoryId }: { category: string; categoryId: string }) {
-  const categorySkills = skills.filter(skill => skill.category === categoryId)
-  
-  if (categorySkills.length === 0) return null
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="mb-16"
-    >
-      <motion.div 
-        initial={{ x: -20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center mb-8"
-      >
-        <div className="w-10 h-[2px] bg-primary mr-4" />
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-          {category}
-        </h2>
-      </motion.div>
-      
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-6 gap-y-8">
-        {categorySkills.map((skill, index) => (
-          <SkillItem key={skill.name} skill={skill} index={index} />
-        ))}
-      </div>
-    </motion.div>
-  )
-}
-
-// Composant principal pour la section des compétences
 export function Skills() {
+  const [activeCategory, setActiveCategory] = useState("frontend");
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
   return (
-    <div className="py-12 md:py-20">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-center mb-16 md:mb-24"
+    <div className="py-32 md:py-40 mt-10">
+      <motion.div 
+        className="flex flex-wrap justify-center gap-3 mb-12"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-          Compétences Techniques
-        </h1>
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Un aperçu des technologies et outils que j&apos;utilise au quotidien
-        </p>
+        {categories.map((category, index) => (
+          <motion.button
+            key={category.id}
+            variants={buttonVariants}
+            onClick={() => setActiveCategory(category.id)}
+            className={cn(
+              "px-5 py-2 text-sm rounded-full transition-colors duration-200",
+              activeCategory === category.id 
+                ? "bg-primary text-white" 
+                : "bg-background/80 border border-border hover:border-primary/50 text-foreground/70 hover:text-foreground"
+            )}
+          >
+            {category.title}
+          </motion.button>
+        ))}
       </motion.div>
 
-      <div className="space-y-16 md:space-y-24">
-        {categories.map((category) => (
-          <SkillCategory 
-            key={category.id} 
-            category={category.title} 
-            categoryId={category.id} 
-          />
-        ))}
-      </div>
+      <motion.div 
+        key={activeCategory}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.3 }}
+        className="max-w-4xl mx-auto"
+      >
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+          {skills
+            .filter(skill => skill.category === activeCategory)
+            .map((skill, index) => (
+              <SkillItem key={skill.name} skill={skill} index={index} />
+            ))}
+        </div>
+      </motion.div>
     </div>
   )
 }
