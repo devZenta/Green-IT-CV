@@ -20,7 +20,7 @@ export function Education() {
       institution: "ENIGMA-School",
       period: "2027 - 2029",
       description: "Master of Science in Computer Science with a focus on Network systems & Cloud or Backend development.",
-      logo: "/logo/enigma_school_logo.png",
+      logo: "",
       link: "https://www.enigma-school.com/"
     },*/
     {
@@ -28,7 +28,7 @@ export function Education() {
       institution: "ENIGMA-School",
       period: "2024 - 2027",
       description: "Bachelor of Science in Computer Science with a focus on Software Engineering and Cybersecurity.",
-      logo: "/logo/enigma_school_logo.png" ,
+      logo: "/establishments/enigma_school_logo.png" ,
       link: "https://www.enigma-school.com/"
     },
     {
@@ -36,7 +36,7 @@ export function Education() {
       institution: "Saint Paul's School",
       period: "2021 - 2024",
       description: "High School Diploma with a focus on Science and Mathematics.",
-      logo: "/logo/saint_paul_logo.png",
+      logo: "/establishments/saint_paul_logo.png",
       link: "https://saintpaul-lille.fr/"
     },
     {
@@ -44,7 +44,7 @@ export function Education() {
       institution: "Dominique Savio College",
       period: "2017 - 2021",
       description: "Secondary School Diploma.",
-      logo: "/logo/dominique_savio_logo.png",
+      logo: "/establishments/dominique_savio_logo.png",
       link: "https://www.savio-lambersart.fr/"
     }
   ]

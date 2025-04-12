@@ -19,7 +19,7 @@ export function Experience() {
       position: "Mobile Applications Developer",
       company: "APPIWAY",
       period: "June 2022 - July 2022",
-      logo: "/logo/appiway_logo.png",
+      logo: "",
       description: `🔍 Observation internship : 
  Field observed ➡️ Developing an application (Coco Cooking)
 
@@ -34,7 +34,7 @@ export function Experience() {
       position: "Customer Service Employee",
       company: "Boulanger - Household Appliances & Multimedia",
       period: "April 2021 - May 2021",
-      logo: "/logo/boulanger_logo.png",
+      logo: "",
       description: `🔍 Observation work placement :
 Field observed ➡️ After-sales service, computer maintenance and repair
 
@@ -70,12 +70,10 @@ Field observed ➡️ After-sales service, computer maintenance and repair
                   className="p-8 rounded-lg flex-1 bg-gradient-to-r from-[#C7CEE8]/20 to-[#C7CEE8]/10 border border-border shadow-sm"
                 >
                   <div className="flex justify-between items-center mb-4">
-                    {/* Date */}
                     <span className="inline-block bg-primary/10 text-primary font-medium px-3 py-1 rounded-full text-sm">
                       {item.period}
                     </span>
 
-                    {/* Logo */}
                     {item.logo && (
                       <div className="w-16 h-16 relative rounded-md overflow-hidden flex items-center justify-center bg-white/20 p-2">
                         <Image
