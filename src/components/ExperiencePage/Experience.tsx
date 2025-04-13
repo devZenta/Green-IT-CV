@@ -16,21 +16,6 @@ interface ExperienceItem {
 export function Experience() {
   const experienceItems: ExperienceItem[] = [
     {
-      position: "Mobile Applications Developer",
-      company: "APPIWAY",
-      period: "June 2022 - July 2022",
-      logo: "",
-      description: `🔍 Observation internship : 
- Field observed ➡️ Developing an application (Coco Cooking)
-
-🔶 During my internship at Appiway, I had the opportunity to discover the professional world of start-ups and their daily challenges. Not yet knowing whether I wanted to go into software or hardware, I chose this internship to explore the field of software development further. 
-
-🔶 I was lucky enough to work alongside experienced developers who shared their expertise. As a result, I discovered different professions: iOS app development, web development, as well as managing the marketing and advertising aspects. At the same time, the developers also helped me make progress on a personal project, namely the creation of a Discord bot in JavaScript. 
-
-🔶 Thanks to this rewarding experience, I was able to confirm my interest in software development and refine my career path in this field.`,
-      technologies: ["Internship", "On-site", "Lille, Hauts-de-France", "EuraTechnologies"]
-    },
-    {
       position: "Customer Service Employee",
       company: "Boulanger - Household Appliances & Multimedia",
       period: "April 2021 - May 2021",
@@ -46,6 +31,21 @@ Field observed ➡️ After-sales service, computer maintenance and repair
 
 🔶 This work placement confirmed my interest in IT, whether in hardware or software, while reinforcing my passion for making it my career in the long term.`,
       technologies: ["Internship", "On-site", "Villeneuve-d'Ascq, Hauts-de-France"],
+    },
+    {
+      position: "Mobile Applications Developer",
+      company: "APPIWAY",
+      period: "June 2022 - July 2022",
+      logo: "",
+      description: `🔍 Observation internship : 
+ Field observed ➡️ Developing an application (Coco Cooking)
+
+🔶 During my internship at Appiway, I had the opportunity to discover the professional world of start-ups and their daily challenges. Not yet knowing whether I wanted to go into software or hardware, I chose this internship to explore the field of software development further. 
+
+🔶 I was lucky enough to work alongside experienced developers who shared their expertise. As a result, I discovered different professions: iOS app development, web development, as well as managing the marketing and advertising aspects. At the same time, the developers also helped me make progress on a personal project, namely the creation of a Discord bot in JavaScript. 
+
+🔶 Thanks to this rewarding experience, I was able to confirm my interest in software development and refine my career path in this field.`,
+      technologies: ["Internship", "On-site", "Lille, Hauts-de-France", "EuraTechnologies"]
     }
   ]
 
