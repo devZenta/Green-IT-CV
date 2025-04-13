@@ -1,13 +1,11 @@
 import { Frame } from "@/components/Utils/Frame";
-import { Navbar } from "@/components/Utils/Navbar";
-import { QuoteContent } from "@/components/Utils/Quote";
+import { Header } from "@/components/HomePage/Header";
 
 export default function Page() {
   return (
     <div>
       <Frame>
-        <Navbar />
-        <QuoteContent />
+        <Header />
       </Frame>
     </div>
   )
