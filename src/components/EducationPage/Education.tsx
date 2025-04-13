@@ -10,26 +10,29 @@ interface EducationItem {
   period: string
   description: string
   logo?: string
-  link?: string 
+  link?: string
+  tag?: string
 }
 
 export function Education() {
   const educationItems: EducationItem[] = [
-    /*{
+    {
       degree: "Master's Degree",
       institution: "ENIGMA-School",
       period: "2027 - 2029",
       description: "Master of Science in Computer Science with a focus on Network systems & Cloud or Backend development.",
-      logo: "",
-      link: "https://www.enigma-school.com/"
-    },*/
+      logo: "/establishments/enigma_school_logo.png",
+      link: "https://www.enigma-school.com/",
+      tag: "Planned"
+    },
     {
       degree: "Bachelor's Degree",
       institution: "ENIGMA-School",
       period: "2024 - 2027",
       description: "Bachelor of Science in Computer Science with a focus on Software Engineering and Cybersecurity.",
-      logo: "/establishments/enigma_school_logo.png" ,
-      link: "https://www.enigma-school.com/"
+      logo: "/establishments/enigma_school_logo.png",
+      link: "https://www.enigma-school.com/",
+      tag: "In progress"
     },
     {
       degree: "High School",
@@ -37,7 +40,8 @@ export function Education() {
       period: "2021 - 2024",
       description: "High School Diploma with a focus on Science and Mathematics.",
       logo: "/establishments/saint_paul_logo.png",
-      link: "https://saintpaul-lille.fr/"
+      link: "https://saintpaul-lille.fr/",
+      tag: "Completed"
     },
     {
       degree: "Secondary School",
@@ -45,9 +49,23 @@ export function Education() {
       period: "2017 - 2021",
       description: "Secondary School Diploma.",
       logo: "/establishments/dominique_savio_logo.png",
-      link: "https://www.savio-lambersart.fr/"
+      link: "https://www.savio-lambersart.fr/",
+      tag: "Completed"
     }
   ]
+
+  const getTagColorClasses = (tag: string) => {
+    switch (tag) {
+      case "Completed":
+        return "bg-green-100/30 text-green-600"; 
+      case "In progress":
+        return "bg-yellow-100/30 text-yellow-600"; 
+      case "Planned":
+        return "bg-red-100/30 text-red-600";
+      default:
+        return "bg-primary/20 text-primary"; 
+    }
+  };
 
   return (
     <section className="py-8 -mt-12" id="education">
@@ -74,7 +92,14 @@ export function Education() {
                   </div>
                 )}
                 <div className="flex-grow">
-                  <h3 className="text-xl font-semibold text-foreground">{item.degree}</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-foreground">{item.degree}</h3>
+                    {item.tag && (
+                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getTagColorClasses(item.tag)}`}>
+                        {item.tag}
+                      </span>
+                    )}
+                  </div>
                   <div className="flex justify-between items-center mt-2">
                     <div className="flex items-center gap-2">
                       <p className="text-primary font-medium">{item.institution}</p>
