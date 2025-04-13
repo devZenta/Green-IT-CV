@@ -34,11 +34,11 @@ Field observed ➡️ After-sales service, computer maintenance and repair
     },
     {
       position: "Mobile Applications Developer",
-      company: "APPIWAY",
+      company: "Appiway",
       period: "June 2022 - July 2022",
       logo: "",
       description: `🔍 Observation internship : 
- Field observed ➡️ Developing an application (Coco Cooking)
+Field observed ➡️ Developing an application (Coco Cooking)
 
 🔶 During my internship at Appiway, I had the opportunity to discover the professional world of start-ups and their daily challenges. Not yet knowing whether I wanted to go into software or hardware, I chose this internship to explore the field of software development further. 
 
@@ -59,7 +59,7 @@ Field observed ➡️ After-sales service, computer maintenance and repair
       <div className="max-w-7xl mx-auto px-4">
         <div className="space-y-12">
           {experienceGroups.map((group, groupIndex) => (
-            <div key={groupIndex} className="flex flex-col md:flex-row gap-8">
+            <div key={groupIndex} className="flex flex-col md:flex-row md:justify-between md:gap-6">
               {group.map((item, index) => (
                 <motion.div
                   key={index}
@@ -67,7 +67,7 @@ Field observed ➡️ After-sales service, computer maintenance and repair
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="p-8 rounded-lg flex-1 bg-gradient-to-r from-[#C7CEE8]/20 to-[#C7CEE8]/10 border border-border shadow-sm"
+                  className="p-6 mt-2 rounded-2xl w-full md:max-w-[48%] bg-gradient-to-r from-[#C7CEE8]/20 to-[#C7CEE8]/10 border border-border shadow-sm"
                 >
                   <div className="flex justify-between items-center mb-4">
                     <span className="inline-block bg-primary/10 text-primary font-medium px-3 py-1 rounded-full text-sm">
@@ -89,7 +89,7 @@ Field observed ➡️ After-sales service, computer maintenance and repair
 
                   <h3 className="text-xl font-semibold text-foreground">{item.position}</h3>
                   <p className="text-primary font-medium mt-2">{item.company}</p>
-                  <p className="mt-3 text-foreground/80 whitespace-pre-line">{item.description}</p>
+                  <p className="mt-3 text-foreground/80 whitespace-pre-line text-sm leading-relaxed">{item.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {item.technologies.map((tech, i) => (
                       <span key={i} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
