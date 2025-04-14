@@ -26,7 +26,7 @@ const skills: Skill[] = [
   { name: "React", icon: "/skills/frontend/react_logo.svg", category: "frontend", proficiency: "learning" },
   { name: "Next JS", icon: "/skills/frontend/nextjs_logo.svg", category: "frontend", proficiency: "learning" },
   { name: "Tailwind CSS", icon: "/skills/frontend/tailwind_css_logo.svg", category: "frontend", proficiency: "learning" },
-  { name: "Shadcn UI", icon: "/skills/frontend/shadcn_ui_logo.jpg", category: "frontend", proficiency: "frequent" },
+  { name: "Shadcn UI", icon: "/skills/frontend/shadcn_ui_logo.webp", category: "frontend", proficiency: "frequent" },
 
 
   { name: "JavaScript", icon: "/skills/backend/javascript_logo.svg", category: "backend", proficiency: "basics" },
@@ -54,10 +54,10 @@ const skills: Skill[] = [
   { name: "Railway", icon: "/skills/devops/railway_logo.svg", category: "devops", proficiency: "frequent" },
 
 
-  { name: "CCNA 1", icon: "/skills/network/ccna1_logo.png", category: "network", proficiency: "obtained" },
-  { name: "CCNA 2", icon: "/skills/network/ccna2_logo.png", category: "network", proficiency: "obtained" },
-  { name: "CSNA", icon: "/skills/network/stormshield_logo.png", category: "network", proficiency: "certifying" },
-  { name: "IOT", icon: "/skills/network/iot_logo.png", category: "network", proficiency: "obtained" },
+  { name: "CCNA 1", icon: "/skills/network/ccna1_logo.webp", category: "network", proficiency: "obtained" },
+  { name: "CCNA 2", icon: "/skills/network/ccna2_logo.webp", category: "network", proficiency: "obtained" },
+  { name: "CSNA", icon: "/skills/network/stormshield_logo.webp", category: "network", proficiency: "certifying" },
+  { name: "IOT", icon: "/skills/network/iot_logo.webp", category: "network", proficiency: "obtained" },
   { name: "Cisco Packet Tracer", icon: "/skills/network/cisco_packet_tracer_logo.svg", category: "network", proficiency: "frequent" },
 
   
