@@ -23,7 +23,7 @@ export function Education() {
       description: "Master of Science in Computer Science with a focus on Network systems & Cloud or Backend development.",
       logo: "/establishments/enigma_school_logo.png",
       link: "https://www.enigma-school.com/",
-      tag: "Planned"
+      tag: "Prospective studies"
     },
     {
       degree: "Bachelor's Degree",
@@ -32,7 +32,7 @@ export function Education() {
       description: "Bachelor of Science in Computer Science with a focus on Software Engineering and Cybersecurity.",
       logo: "/establishments/enigma_school_logo.png",
       link: "https://www.enigma-school.com/",
-      tag: "In progress"
+      tag: "Currently"
     },
     {
       degree: "High School",
@@ -41,7 +41,7 @@ export function Education() {
       description: "High School Diploma with a focus on Science and Mathematics.",
       logo: "/establishments/saint_paul_logo.png",
       link: "https://saintpaul-lille.fr/",
-      tag: "Completed"
+      tag: "Achieved"
     },
     {
       degree: "Secondary School",
@@ -50,17 +50,17 @@ export function Education() {
       description: "Secondary School Diploma.",
       logo: "/establishments/dominique_savio_logo.png",
       link: "https://www.savio-lambersart.fr/",
-      tag: "Completed"
+      tag: "Achieved"
     }
   ]
 
   const getTagColorClasses = (tag: string) => {
     switch (tag) {
-      case "Completed":
+      case "Achieved":
         return "bg-green-100/30 text-green-600"; 
-      case "In progress":
+      case "Currently":
         return "bg-yellow-100/30 text-yellow-600"; 
-      case "Planned":
+      case "Prospective studies":
         return "bg-red-100/30 text-red-600";
       default:
         return "bg-primary/20 text-primary"; 
